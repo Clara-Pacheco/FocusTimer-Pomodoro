@@ -7,6 +7,7 @@
 
 :root {
   --bg-color: #121214;
+  --bg-controls: rgba(66, 211, 255, 0.13);
   --primary-color: #42D3FF;
   --text-color: #fff;
 
@@ -66,7 +67,7 @@ footer {
 
 
 
-  background: rgba(66, 211, 255, 0.13);
+  background: var(--bg-controls);
   border-radius: 999.9rem;
 }
 
