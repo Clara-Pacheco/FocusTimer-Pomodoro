@@ -65,10 +65,10 @@ footer {
   padding: 2.2rem 4rem;
   gap: 3.2rem;
 
-
+  width: clamp(10rem, 10rem + 30vw, 22.8rem);
 
   background: var(--bg-controls);
-  border-radius: 999.9rem;
+  border-radius: 999.9rem;  /* BORDER-ÍLL*/
 }
 
 .sound-on,
