@@ -21,6 +21,10 @@ body {
 
   font-size: 1.6rem;
   color: var(--text-color);
+
+  min-height: 100vh;
+  display:grid;
+
 }
 
 button {
@@ -35,15 +39,22 @@ button svg {
 }
 
 main {
-  height: 100vh;
+  /* min-height: 100vh;
   display:grid;
-  place-content: center;
+  place-content: center; */
+  justify-self:center;
+  align-self: end;
+
+
 }
 
 footer {
 
-  position: absolute;
-  right: 0;
+  /* position: absolute;
+  right: 0; */
+
+  justify-self: end;
+  align-self: end;
 }
 
 .hide {
