@@ -30,6 +30,10 @@ button {
   cursor: pointer;
 }
 
+button svg {
+  width: clamp(3.2rem, 2rem + 12vw, 6.4rem);
+}
+
 main {
   height: 100vh;
   display:grid;
@@ -47,7 +51,7 @@ footer {
 }
 
 .timer {
-  font-size: 8.8rem;
+  font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
   line-height: 10.3rem;
   text-align: center;
   text-transform: uppercase;
