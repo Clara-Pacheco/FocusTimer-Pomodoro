@@ -15,25 +15,32 @@ function countDown() {
     let minutes = Number(displayMinutes.textContent)
  
     if(!minutes == 0 || !seconds == 0){
-    displaySeconds.textContent = String(seconds - 1).padStart(2,"0")
+      updateTimerDisplay(minutes,0)
+  
     }
 
     if(minutes <= 0 ){
       togglePlayPauseButtons()
       toggleStopSetButtons()
+      
       return
     }
 
     if(seconds <= 0){
       seconds = 2
 
-      displayMinutes.textContent = String(minutes - 1).padStart(2,"0")
+      --minutes
     }
 
-    displaySeconds.textContent = String(seconds - 1).padStart(2,"0")
+    updateTimerDisplay(minutes, String(seconds - 1))
     
     countDown()  // Recursão (Quando uma função chama ela mesma)
   },1000)
+}
+
+function updateTimerDisplay(minutes,seconds){
+  displayMinutes.innerText = String(minutes).padStart(2,"0")
+  displaySeconds.innerText = String(seconds).padStart(2,"0")
 }
 
 
@@ -54,8 +61,10 @@ function toggleSoundOnOff() {
 }
 
 btnPlay.addEventListener('click', ()=>{
+ 
   togglePlayPauseButtons()
   toggleStopSetButtons()
+
 
   countDown()
 })
@@ -84,6 +93,7 @@ btnSoundOff.addEventListener('click', ()=>{
 btnSet.addEventListener('click', () => {
   minutes = prompt('Quantos minutos?')
   if(!minutes == ""){
-  displayMinutes.innerText = String(minutes).padStart(2,"0")
-  }
+  updateTimerDisplay(minutes,0)
+}
+
 })
