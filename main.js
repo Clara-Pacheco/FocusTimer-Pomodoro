@@ -7,9 +7,10 @@ const btnSoundOff= document.querySelector('.sound-off')
 let minutes
 const displayMinutes = document.querySelector('.minutes')
 const displaySeconds = document.querySelector('.seconds')
+let countDownTimer
 
 function countDown() {
-  setTimeout(()=>{
+  countDownTimer = setTimeout(()=>{
 
     let seconds = Number(displaySeconds.textContent)
     let minutes = Number(displayMinutes.textContent)
@@ -71,6 +72,7 @@ btnPlay.addEventListener('click', ()=>{
 
 btnPause.addEventListener('click', ()=>{
   togglePlayPauseButtons()
+  clearTimeout(countDownTimer)
   
 })
 
@@ -78,8 +80,9 @@ btnStop.addEventListener('click',() => {
   if(btnPlay.classList.contains('hide')){
     togglePlayPauseButtons()
   }
-
   toggleStopSetButtons()
+  clearTimeout(countDownTimer)
+  updateTimerDisplay(minutes,0)
 })
 
 btnSoundOn.addEventListener('click', ()=>{
