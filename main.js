@@ -83,5 +83,7 @@ btnSoundOff.addEventListener('click', ()=>{
 
 btnSet.addEventListener('click', () => {
   minutes = prompt('Quantos minutos?')
+  if(!minutes == ""){
   displayMinutes.innerText = String(minutes).padStart(2,"0")
+  }
 })
