@@ -11,19 +11,19 @@ export function Timer({
       let seconds = Number(displaySeconds.textContent);
       let minutes = Number(displayMinutes.textContent);
 
-      if (!minutes === 0 || !seconds === 0) {
+     
         updateTimerDisplay(minutes, 0);
-      }
+      
 
       if (minutes <= 0) {
         controls.togglePlayPauseButtons();
         controls.toggleStopSetButtons();
 
-        return;
+        return
       }
 
       if (seconds <= 0) {
-        seconds = 59;
+        seconds = 3;
         --minutes;
       }
 
