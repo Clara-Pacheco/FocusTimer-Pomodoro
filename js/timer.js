@@ -2,10 +2,12 @@ export function Timer({
   displayMinutes,
   displaySeconds,
   btnPlay,
-  countDownTimer,
   controls,
   minutesPrompt
 }) {
+
+  let countDownTimer
+
   function countDown() {
      countDownTimer = setTimeout(() => {
       let seconds = Number(displaySeconds.textContent);
@@ -48,9 +50,14 @@ export function Timer({
     clearTimeout(countDownTimer);
   }
 
+  function hold() {
+    clearTimeout(countDownTimer)
+  }
+
   return {
     countDown,
     updateTimerDisplay,
-    resetTimer
+    resetTimer,
+    hold
   };
 }

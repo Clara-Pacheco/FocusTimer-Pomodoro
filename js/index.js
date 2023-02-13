@@ -87,7 +87,6 @@ const btnSoundOff = document.querySelector('.sound-off');
 const displayMinutes = document.querySelector('.minutes');
 let minutes = Number(displayMinutes.textContent);
 const displaySeconds = document.querySelector('.seconds');
-let countDownTimer;
 let minutesPrompt;
 
 const controls = ToggleButtons({
@@ -103,7 +102,6 @@ const timer = Timer({
   displayMinutes,
   displaySeconds,
   btnPlay,
-  countDownTimer,
   controls,
   minutesPrompt
 });
@@ -121,7 +119,7 @@ btnPlay.addEventListener('click', () => {
 
 btnPause.addEventListener('click', () => {
   controls.togglePlayPauseButtons();
-  clearTimeout(countDownTimer);
+  timer.hold();
 });
 
 btnStop.addEventListener('click', () => {
