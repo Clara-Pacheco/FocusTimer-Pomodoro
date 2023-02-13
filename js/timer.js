@@ -3,7 +3,6 @@ export function Timer({
   displaySeconds,
   btnPlay,
   controls,
-  minutes
 
 }) {
 

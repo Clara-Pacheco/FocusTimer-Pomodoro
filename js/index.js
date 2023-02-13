@@ -30,7 +30,6 @@ const timer = Timer({
   displaySeconds,
   btnPlay,
   controls,
-  minutes
  
 });
 
