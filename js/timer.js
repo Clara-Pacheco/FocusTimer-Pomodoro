@@ -32,7 +32,6 @@ export function Timer({
       countDown(); // Recursion (When a function calls itself)
     }, 1000);
 
-    return countDownTimer
   }
 
   function updateTimerDisplay(minutes, seconds) {

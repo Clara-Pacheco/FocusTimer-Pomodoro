@@ -138,7 +138,7 @@ btnSoundOff.addEventListener('click', () => {
 
 btnSet.addEventListener('click', () => {
   minutesPrompt = prompt('Quantos minutos?');
-  if (minutesPrompt !== "") {
+  if (!minutesPrompt == "") {
     timer.updateTimerDisplay(minutesPrompt, 0);
   }
 });
