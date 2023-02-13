@@ -85,9 +85,9 @@ const btnSet = document.querySelector('.set');
 const btnSoundOn = document.querySelector('.sound-on');
 const btnSoundOff = document.querySelector('.sound-off');
 const displayMinutes = document.querySelector('.minutes');
-let minutes = Number(displayMinutes.textContent);
 const displaySeconds = document.querySelector('.seconds');
-let minutesPrompt;
+let minutes = Number(displayMinutes.textContent);
+
 
 const controls = ToggleButtons({
   btnPlay,
@@ -103,8 +103,10 @@ const timer = Timer({
   displaySeconds,
   btnPlay,
   controls,
-  minutesPrompt
+  minutes
+ 
 });
+
 
 btnPlay.addEventListener('click', () => {
   controls.toggleStopSetButtons();
@@ -124,6 +126,7 @@ btnPause.addEventListener('click', () => {
 
 btnStop.addEventListener('click', () => {
   timer.resetTimer();
+  timer.updateTimerDisplay(minutes,0)
 });
 
 btnSoundOn.addEventListener('click', () => {
@@ -135,8 +138,14 @@ btnSoundOff.addEventListener('click', () => {
 });
 
 btnSet.addEventListener('click', () => {
-  minutesPrompt = prompt('Quantos minutos?');
-  if (!minutesPrompt == "") {
-    timer.updateTimerDisplay(minutesPrompt, 0);
+  let newMinutes = controls.getMinutes()
+  if (!newMinutes) {
+    timer.resetTimer()
+    return
+    
   }
+
+  minutes = newMinutes
+  timer.updateTimerDisplay(minutes, 0);
+ 
 });

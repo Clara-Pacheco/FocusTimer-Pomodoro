@@ -3,10 +3,12 @@ export function Timer({
   displaySeconds,
   btnPlay,
   controls,
-  minutesPrompt
+  minutes
+
 }) {
 
   let countDownTimer
+  
 
   function countDown() {
      countDownTimer = setTimeout(() => {
@@ -43,21 +45,24 @@ export function Timer({
 
   function resetTimer() {
     if (btnPlay.classList.contains("hide")) {
-      controls.togglePlayPauseButtons();
+      controls.togglePlayPauseButtons()
     }
-    controls.toggleStopSetButtons();
-    updateTimerDisplay(minutesPrompt, 0);
-    clearTimeout(countDownTimer);
+    controls.toggleStopSetButtons()
+    hold()
+    
+    
   }
 
   function hold() {
     clearTimeout(countDownTimer)
   }
 
+
   return {
     countDown,
     updateTimerDisplay,
     resetTimer,
-    hold
-  };
+    hold,
+    
+  }
 }

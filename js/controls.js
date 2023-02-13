@@ -29,11 +29,21 @@ export function ToggleButtons({
     btnSoundOff.classList.toggle('hide')
   }
 
+  function getMinutes() {
+    let newMinutes = prompt('Quantos minutos?')
+    if(!newMinutes) {
+      return false
+    }
+
+    return newMinutes
+  }
+
   return {
     togglePlayPauseButtons,
     toggleStopSetButtons,
     toggleSoundOnOff,
-    toggleSoundOn
+    toggleSoundOn,
+    getMinutes
   }
 
 }
