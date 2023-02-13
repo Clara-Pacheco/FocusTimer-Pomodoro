@@ -1,117 +1,144 @@
-//named import
-import { togglePlayPauseButtons, toggleStopSetButtons, toggleSoundOnOff } from "./controls.js"
+// //named import
+// import { ToggleButtons } from "./controls.js"
 
-// named import
-import { countDown, updateTimerDisplay, resetTimer } from "./timer.js"
+// // named import
+// import { Timer } from "./timer.js"
 
-const btnPlay = document.querySelector('.play')
-const btnPause = document.querySelector('.pause')
-const btnStop = document.querySelector('.stop')
-const btnSet = document.querySelector('.set')
-const btnSoundOn = document.querySelector('.sound-on')
-const btnSoundOff= document.querySelector('.sound-off')
-const displayMinutes = document.querySelector('.minutes')
-let minutes = Number(displayMinutes.textContent)
-const displaySeconds = document.querySelector('.seconds')
-let countDownTimer
+// const btnPlay = document.querySelector('.play')
+// const btnPause = document.querySelector('.pause')
+// const btnStop = document.querySelector('.stop')
+// const btnSet = document.querySelector('.set')
+// const btnSoundOn = document.querySelector('.sound-on')
+// const btnSoundOff= document.querySelector('.sound-off')
+// const displayMinutes = document.querySelector('.minutes')
+// let minutes = Number(displayMinutes.textContent)
+// const displaySeconds = document.querySelector('.seconds')
+// let countDownTimer
+// let minutesPrompt
 
-// function countDown() {
-//   countDownTimer = setTimeout(()=>{
 
-//     let seconds = Number(displaySeconds.textContent)
-//     let minutes = Number(displayMinutes.textContent)
- 
-//     if(!minutes == 0 || !seconds == 0){
-//       updateTimerDisplay(minutes,0)
-  
-//     }
+// const controls = ToggleButtons({
+//   btnPlay,
+//   btnPause,
+//   btnStop,
+//   btnSet,
+//   btnSoundOn,
+//   btnSoundOff  
+// })
 
-//     if(minutes <= 0 ){
-//       togglePlayPauseButtons()
-//       toggleStopSetButtons()
-      
-//       return
-//     }
+// const timer = Timer({
+//   displayMinutes,
+//   displaySeconds,
+//   btnPlay,
+//   countDownTimer,
+//   controls,
+//   minutesPrompt
+// })
 
-//     if(seconds <= 0){
-//       seconds = 2
+// btnPlay.addEventListener('click', ()=>{
+//   controls.toggleStopSetButtons()
+//   controls.togglePlayPauseButtons()
 
-//       --minutes
-//     }
-
-//     updateTimerDisplay(minutes, String(seconds - 1))
-    
-//     countDown()  // Recursão (Quando uma função chama ela mesma)
-//   },1000)
-// }
-
-// function updateTimerDisplay(minutes,seconds){
-//   displayMinutes.innerText = String(minutes).padStart(2,"0")
-//   displaySeconds.innerText = String(seconds).padStart(2,"0")
-// }
-
-// function resetTimer() {
-//   if(btnPlay.classList.contains('hide')){
-//     togglePlayPauseButtons()
+//   if(btnStop.classList.contains('hide')){
+//     controls.toggleStopSetButtons()
 //   }
-//   toggleStopSetButtons()
-//   updateTimerDisplay(minutes,0)
+  
+//   timer.countDown()
+// })
+
+// btnPause.addEventListener('click', ()=>{
+//   controls.togglePlayPauseButtons()
 //   clearTimeout(countDownTimer)
+  
+// })
+
+// btnStop.addEventListener('click',() => {
+//  timer.resetTimer()
+// })
+
+// btnSoundOn.addEventListener('click', ()=>{
+//   controls.toggleSoundOnOff()
+// })
+
+// btnSoundOff.addEventListener('click', ()=>{
+//   controls.toggleSoundOn()
+// })
+
+// btnSet.addEventListener('click', () => {
+//   minutesPrompt = prompt('Quantos minutos?')
+//   if(!minutesPrompt == ""){
+//   timer.updateTimerDisplay(minutesPrompt,0)
 // }
 
+// })
 
-// function togglePlayPauseButtons() {
-//   btnPlay.classList.toggle('hide')
-//   btnPause.classList.toggle('hide')
+// Named import
+import { ToggleButtons } from "./controls.js";
 
-// }
+// Named import
+import { Timer } from "./timer.js";
 
-// function toggleStopSetButtons() { 
-//   btnStop.classList.toggle('hide')
-//   btnSet.classList.toggle('hide')
-// }
+const btnPlay = document.querySelector('.play');
+const btnPause = document.querySelector('.pause');
+const btnStop = document.querySelector('.stop');
+const btnSet = document.querySelector('.set');
+const btnSoundOn = document.querySelector('.sound-on');
+const btnSoundOff = document.querySelector('.sound-off');
+const displayMinutes = document.querySelector('.minutes');
+let minutes = Number(displayMinutes.textContent);
+const displaySeconds = document.querySelector('.seconds');
+let countDownTimer;
+let minutesPrompt;
 
-// function toggleSoundOnOff() {
-//   btnSoundOn.classList.toggle('hide')
-//   btnSoundOff.classList.toggle('hide')
-// }
+const controls = ToggleButtons({
+  btnPlay,
+  btnPause,
+  btnStop,
+  btnSet,
+  btnSoundOn,
+  btnSoundOff
+});
 
-btnPlay.addEventListener('click', ()=>{
+const timer = Timer({
+  displayMinutes,
+  displaySeconds,
+  btnPlay,
+  countDownTimer,
+  controls,
+  minutesPrompt
+});
 
-  toggleStopSetButtons()
-  togglePlayPauseButtons()
+btnPlay.addEventListener('click', () => {
+  controls.toggleStopSetButtons();
+  controls.togglePlayPauseButtons();
 
-  if(btnStop.classList.contains('hide')){
-    toggleStopSetButtons()
+  if (btnStop.classList.contains('hide')) {
+    controls.toggleStopSetButtons();
   }
-  
 
+  timer.countDown();
+});
 
-  countDown()
-})
+btnPause.addEventListener('click', () => {
+  controls.togglePlayPauseButtons();
+  clearTimeout(countDownTimer);
+});
 
-btnPause.addEventListener('click', ()=>{
-  togglePlayPauseButtons()
-  clearTimeout(countDownTimer)
-  
-})
+btnStop.addEventListener('click', () => {
+  timer.resetTimer();
+});
 
-btnStop.addEventListener('click',() => {
-  resetTimer()
-})
+btnSoundOn.addEventListener('click', () => {
+  controls.toggleSoundOnOff();
+});
 
-btnSoundOn.addEventListener('click', ()=>{
-  toggleSoundOnOff()
-})
-
-btnSoundOff.addEventListener('click', ()=>{
-  toggleSoundOnOff()
-})
+btnSoundOff.addEventListener('click', () => {
+  controls.toggleSoundOn();
+});
 
 btnSet.addEventListener('click', () => {
-  minutes = prompt('Quantos minutos?')
-  if(!minutes == ""){
-  updateTimerDisplay(minutes,0)
-}
-
-})
+  minutesPrompt = prompt('Quantos minutos?');
+  if (minutesPrompt !== "") {
+    timer.updateTimerDisplay(minutesPrompt, 0);
+  }
+});
