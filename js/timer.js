@@ -32,6 +32,7 @@ export function Timer({
         controls.togglePlayPauseButtons();
         controls.toggleStopSetButtons();
         sounds.timeOff()
+        
        
         
         return

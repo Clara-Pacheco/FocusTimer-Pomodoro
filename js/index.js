@@ -71,12 +71,13 @@ btnStop.addEventListener('click', () => {
 
 btnSoundOn.addEventListener('click', () => {
   controls.toggleSoundOnOff()
-  sounds.bgAudio.play()
+  sounds.bgAudio.pause()
+  
 });
 
 btnSoundOff.addEventListener('click', () => {
   controls.toggleSoundOn()
-  sounds.bgAudio.pause()
+  sounds.bgAudio.play()
   
 });
 
