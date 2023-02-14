@@ -46,6 +46,7 @@ btnPlay.addEventListener('click', () => {
   controls.togglePlayPauseButtons()
   sounds.pressButton()
   
+  
 
   if (btnStop.classList.contains('hide')) {
     controls.toggleStopSetButtons()
@@ -57,6 +58,7 @@ btnPlay.addEventListener('click', () => {
 btnPause.addEventListener('click', () => {
   controls.togglePlayPauseButtons()
   sounds.pressButton()
+
 
   timer.hold()
 });
