@@ -29,8 +29,8 @@ const timer = Timer({
   displayMinutes,
   displaySeconds,
   btnPlay,
-  controls,
- 
+  controls, 
+  minutes
 });
 
 
@@ -73,5 +73,6 @@ btnSet.addEventListener('click', () => {
 
   minutes = newMinutes
   timer.updateTimerDisplay(minutes, 0);
- 
+  timer.updateMinutes(newMinutes)
+  
 });
