@@ -2,7 +2,6 @@ import soundsElements from './sounds.js'
 
 const sounds = soundsElements()
 
-
 export function Timer({
   displayMinutes,
   displaySeconds,
@@ -31,10 +30,9 @@ export function Timer({
         updateTimerDisplay()
         controls.togglePlayPauseButtons();
         controls.toggleStopSetButtons();
+        controls.toggleSoundOnOff()
+        sounds.bgAudio.pause()
         sounds.timeOff()
-        
-       
-        
         return
       }
 

@@ -45,6 +45,8 @@ btnPlay.addEventListener('click', () => {
   controls.toggleStopSetButtons()
   controls.togglePlayPauseButtons()
   sounds.pressButton()
+  sounds.bgAudio.play()
+  controls.toggleSoundOn()
   
   
 
@@ -58,6 +60,8 @@ btnPlay.addEventListener('click', () => {
 btnPause.addEventListener('click', () => {
   controls.togglePlayPauseButtons()
   sounds.pressButton()
+  sounds.bgAudio.pause()
+  controls.toggleSoundOnOff()
 
 
   timer.hold()
@@ -67,6 +71,8 @@ btnStop.addEventListener('click', () => {
   timer.resetTimer()
   timer.updateTimerDisplay(minutes,0)
   sounds.pressButton()
+  sounds.bgAudio.pause()
+  controls.toggleSoundOnOff()
 });
 
 btnSoundOn.addEventListener('click', () => {
