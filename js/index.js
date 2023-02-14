@@ -66,7 +66,9 @@ btnSoundOff.addEventListener('click', () => {
 btnSet.addEventListener('click', () => {
   let newMinutes = controls.getMinutes()
   if (!newMinutes) {
-    timer.resetTimer()
+    // timer.resetTimer()
+    controls.togglePlayPauseButtons()
+    controls.togglePlayPauseButtons()
     return
     
   }
@@ -74,5 +76,5 @@ btnSet.addEventListener('click', () => {
   minutes = newMinutes
   timer.updateTimerDisplay(minutes, 0);
   timer.updateMinutes(newMinutes)
-  
+
 });

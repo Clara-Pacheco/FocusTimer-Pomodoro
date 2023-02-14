@@ -7,7 +7,6 @@ export function Timer({
  
 }) {
 
-  // console.log(minutes)
 
   let countDownTimer
 
@@ -33,7 +32,7 @@ export function Timer({
       }
 
       if (seconds <= 0) {
-        seconds = 2;
+        seconds = 59;
         --minutes;
       }
 
