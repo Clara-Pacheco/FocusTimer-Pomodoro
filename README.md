@@ -55,7 +55,7 @@ no decorrer do programa <b>Explorer</b>.
 
 🕛 **Status:** Concluído✔️
 
-🌎 **Result Preview:** 
+🌎 **Result Preview:** https://clara-pacheco.github.io/n05-explorer-rocketseat-projeto-focusTimerPomodoro/
 
 <div align="center">
 Feito com 💜 por Clara 🚀
