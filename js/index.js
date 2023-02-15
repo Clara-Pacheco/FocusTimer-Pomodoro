@@ -30,23 +30,25 @@ const controls = ToggleButtons({
   btnSoundOff
 });
 
+const sounds = soundsElements()
+
 const timer = Timer({
   displayMinutes,
   displaySeconds,
   btnPlay,
   controls, 
-  minutes
+  minutes,
+  sounds,
+  btnPause
 })
-
-const sounds = soundsElements()
 
 
 btnPlay.addEventListener('click', () => {
   controls.toggleStopSetButtons()
   controls.togglePlayPauseButtons()
   sounds.pressButton()
-  sounds.bgAudio.play()
   controls.toggleSoundOn()
+  sounds.bgAudioPlay()
   
   
 
@@ -60,8 +62,8 @@ btnPlay.addEventListener('click', () => {
 btnPause.addEventListener('click', () => {
   controls.togglePlayPauseButtons()
   sounds.pressButton()
-  sounds.bgAudio.pause()
   controls.toggleSoundOnOff()
+  sounds.bgAudioPause()
 
 
   timer.hold()
@@ -77,13 +79,13 @@ btnStop.addEventListener('click', () => {
 
 btnSoundOn.addEventListener('click', () => {
   controls.toggleSoundOnOff()
-  sounds.bgAudio.pause()
+  sounds.bgAudioPause()
   
 });
 
 btnSoundOff.addEventListener('click', () => {
   controls.toggleSoundOn()
-  sounds.bgAudio.play()
+  sounds.bgAudioPlay()
   
 });
 

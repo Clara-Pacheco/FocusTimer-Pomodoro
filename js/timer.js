@@ -1,14 +1,13 @@
-import soundsElements from './sounds.js'
-
-const sounds = soundsElements()
 
 export function Timer({
   displayMinutes,
   displaySeconds,
   btnPlay,
   controls,
-  minutes 
- 
+  minutes,
+  sounds,
+  btnPause
+    
 }) {
 
 
@@ -16,6 +15,12 @@ export function Timer({
 
 
   function countDown() {
+
+    if(btnPause.classList.contains('hide')){
+      sounds.bgAudioPlay()
+    }
+     
+
      countDownTimer = setTimeout(() => {
       let seconds = Number(displaySeconds.textContent);
       let minutes = Number(displayMinutes.textContent);
@@ -31,8 +36,8 @@ export function Timer({
         controls.togglePlayPauseButtons();
         controls.toggleStopSetButtons();
         controls.toggleSoundOnOff()
-        sounds.bgAudio.pause()
         sounds.timeOff()
+        
         return
       }
 

@@ -7,18 +7,29 @@ export default function() {
 
   bgAudio.loop
 
-  
+
  function pressButton() {
   buttonPressAudio.play()
  }
 
  function timeOff() {
+  bgAudioPause()
   kitchenTimer.play()
  }
+ function bgAudioPlay(){
+  bgAudio.play()
+}
+
+function bgAudioPause(){
+  bgAudio.pause()
+}
 
   return {
     pressButton,
     timeOff,
+    bgAudioPlay,
+    bgAudioPause,
     bgAudio
+ 
   }
 }
