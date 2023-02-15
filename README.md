@@ -3,9 +3,9 @@
 <img width="150px" src="https://www.rocketseat.com.br/_next/image?url=%2Fassets%2Flogos%2Fexplorer.svg&w=256&q=75"  alt="">
 <br>
 <p align="center">
-<img src="https://img.shields.io/github/last-commit/Clara-Pacheco/n05-explorer-rocketseat-projeto-imc"/>&nbsp;&nbsp;&nbsp;
-<img src="https://img.shields.io/github/repo-size/Clara-Pacheco/n05-explorer-rocketseat-projeto-imc"/>&nbsp;&nbsp;&nbsp;
-<img src="https://img.shields.io/github/languages/count/Clara-Pacheco/n05-explorer-rocketseat-projeto-imc"/>
+<img src="https://img.shields.io/github/last-commit/Clara-Pacheco/n05-explorer-rocketseat-projeto-focusTimerPomodoro"/>&nbsp;&nbsp;&nbsp;
+<img src="https://img.shields.io/github/repo-size/Clara-Pacheco/n05-explorer-rocketseat-projeto-focusTimerPomodoro"/>&nbsp;&nbsp;&nbsp;
+<img src="https://img.shields.io/github/languages/count/Clara-Pacheco/n05-explorer-rocketseat-projeto-focusTimerPomodoro"/>
 </p>
 </div>
 
@@ -34,7 +34,7 @@ Aqui neste **[link](https://www.figma.com/file/camz2f5oA9KvW7a6zcymKc/Explorer-S
 
 O resultado final desse desafio deve ser algo em torno de:
 
-![Project´s preview]()
+![Project´s preview](https://github.com/Clara-Pacheco/n05-explorer-rocketseat-projeto-focusTimerPomodoro/blob/main/assets/img-preview/FocusTimer.png)
 
 
 ## 🧪 Tecnologias | HTML , CSS e Javascript
@@ -55,7 +55,7 @@ no decorrer do programa <b>Explorer</b>.
 
 🕛 **Status:** Concluído✔️
 
-🌎 **Result Preview:** https://clara-pacheco.github.io/n05-explorer-rocketseat-projeto-imc/
+🌎 **Result Preview:** 
 
 <div align="center">
 Feito com 💜 por Clara 🚀
