@@ -34,7 +34,9 @@ Aqui neste **[link](https://www.figma.com/file/camz2f5oA9KvW7a6zcymKc/Explorer-S
 
 O resultado final desse desafio deve ser algo em torno de:
 
-![Project´s preview](https://github.com/Clara-Pacheco/n05-explorer-rocketseat-projeto-focusTimerPomodoro/blob/main/assets/img-preview/FocusTimer.png)
+![Project´s preview](https://github.com/Clara-Pacheco/n05-explorer-rocketseat-projeto-focusTimerPomodoro/blob/main/assets/project-preview/FocusTimer.png)
+
+![Project´s preview](https://github.com/Clara-Pacheco/n05-explorer-rocketseat-projeto-focusTimerPomodoro/blob/main/assets/project-preview/Pomodoro-FocusTimer-Google-Chrome-2023-02-15-08-44-18.gif)
 
 
 ## 🧪 Tecnologias | HTML , CSS e Javascript
